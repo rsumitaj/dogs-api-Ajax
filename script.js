@@ -16,15 +16,21 @@ function fetchRandomDogImage(){
 
   // with jQuery
 
-  $.ajax({
-    url:'https://dog.ceo/api/breeds/image/random',
-    method:'GET',
-    success:function(data){
+  // $.ajax({
+  //   url:'https://dog.ceo/api/breeds/image/random',
+  //   method:'GET',
+  //   success:function(data){
 
-        var imageUrl = data.message;
-        $('#dog-image').attr('src',imageUrl);
-      }
-    });
+  //       var imageUrl = data.message;
+  //       $('#dog-image').attr('src',imageUrl);
+  //     }
+  //   });
+
+  $.get('https://dog.ceo/api/breeds/image/random',function(data){
+
+           var imageUrl = data.message;
+           $('#dog-image').attr('src',imageUrl);
+         });
 
 };
 
